@@ -8,6 +8,7 @@ import com.bugima.rickandmortycharacters.util.Const.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -17,7 +18,7 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(appContext: Context): RickAndMortyDatabase {
+    fun provideDatabase(@ApplicationContext appContext: Context): RickAndMortyDatabase {
         return Room.databaseBuilder(
             context = appContext,
             klass = RickAndMortyDatabase::class.java,

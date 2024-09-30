@@ -4,6 +4,7 @@ import com.bugima.rickandmortycharacters.data.local.dao.FavoriteCharacterDao
 import com.bugima.rickandmortycharacters.data.remote.api.RickAndMortyApi
 import com.bugima.rickandmortycharacters.data.repository.CharacterRepositoryImpl
 import com.bugima.rickandmortycharacters.domain.repository.CharacterRepository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,14 +13,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepositoryModule {
+abstract class RepositoryModule {
 
-    @Provides
+    @Binds
     @Singleton
-    fun provideCharacterRepository(
-        api: RickAndMortyApi,
-        dao: FavoriteCharacterDao
-    ): CharacterRepository {
-        return CharacterRepositoryImpl(api, dao)
-    }
+    abstract fun provideCharacterRepository(
+        repository: CharacterRepositoryImpl
+    ): CharacterRepository
 }
