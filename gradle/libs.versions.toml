@@ -1,13 +1,16 @@
 [versions]
 activityCompose = "1.9.2"
 agp = "8.4.2"
+coilCompose = "2.7.0"
 composeBom = "2024.09.02"
 coreKtx = "1.13.1"
 daggerHilt = "2.48"
 kotlin = "1.9.0"
-ksp = "1.5.30-1.0.0"
+kotlinxCoroutinesTest = "1.8.1"
+ksp = "1.9.0-1.0.12"
 lifecycleRuntimeKtx = "2.8.6"
-okhttp = "4.9.0"
+mockk = "1.13.5"
+okhttp = "4.12.0"
 retrofit = "2.9.0"
 room = "2.6.1"
 
@@ -40,6 +43,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 # Dagger Hilt
 dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerHilt" }
 dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "daggerHilt" }
+dagger-hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "daggerHilt" }
 
 # Room
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
@@ -50,12 +54,19 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 
-#OkHttp
+# OkHttp
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
-#Test
+# Coil
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+
+# Test
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+
+# Android Test
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "composeUiTest" }

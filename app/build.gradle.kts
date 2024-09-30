@@ -70,6 +70,7 @@ dependencies {
     // Dagger Hilt
     implementation(libs.dagger.hilt)
     ksp(libs.dagger.hilt.compiler)
+    ksp(libs.dagger.hilt.android.compiler)
 
     // Room
     implementation(libs.room.runtime)
@@ -82,8 +83,13 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
 
-    // Unit Testing
+    // Coil
+    implementation(libs.coil.compose)
+
+    // Testing
     testImplementation(libs.junit)
+    testImplementation (libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
 
     // Android Testing
     androidTestImplementation(libs.androidx.junit)
