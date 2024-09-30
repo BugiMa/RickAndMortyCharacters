@@ -10,6 +10,12 @@ fun CharacterDto.toDomain() = Character(
     imageUrl = imageUrl,
 )
 
+fun CharacterEntity.toDomain() = Character(
+    id = id,
+    name = name,
+    imageUrl = imageUrl,
+)
+
 fun Character.toData() = CharacterEntity(
     id = id,
     name = name,

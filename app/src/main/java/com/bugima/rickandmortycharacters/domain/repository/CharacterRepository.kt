@@ -1,12 +1,11 @@
 package com.bugima.rickandmortycharacters.domain.repository
 
 import com.bugima.rickandmortycharacters.domain.model.Character
-import com.bugima.rickandmortycharacters.util.Resource
 
 interface CharacterRepository {
-    suspend fun fetchCharacters(page: Int): Resource<Set<Character>>
+    suspend fun fetchCharacters(page: Int): Set<Character>
     fun getCharacterPageCount(): Int?
     suspend fun addCharacterToFavorites(character: Character)
-    suspend fun removeCharacterFromFavoritesById(character: Character)
-    suspend fun getAllFavoritesIds(): Set<Int>
+    suspend fun removeCharacterFromFavorites(character: Character)
+    suspend fun getAllFavorites(): Set<Character>
 }
