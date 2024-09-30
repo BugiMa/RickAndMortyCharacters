@@ -7,7 +7,6 @@ import androidx.compose.runtime.snapshotFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
 
 @Composable
 inline fun LazyListState.ScrollEndCallback(crossinline callback: () -> Unit) {
@@ -15,9 +14,9 @@ inline fun LazyListState.ScrollEndCallback(crossinline callback: () -> Unit) {
         snapshotFlow { layoutInfo }
             .filter { it.totalItemsCount > 0 }
             .map { layoutInfo ->
-                layoutInfo.totalItemsCount == (layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1) + 1
-            }
-            .distinctUntilChanged()
+                layoutInfo.totalItemsCount ==
+                        (layoutInfo.visibleItemsInfo.lastOrNull()?.index ?: -1) + 1
+            }.distinctUntilChanged()
             .filter { it }
             .collect { callback() }
     }

@@ -23,6 +23,7 @@ fun Exception.createLogMessage(): String {
             cause,
             stackTraceToString()
         )
+
         is HttpException -> {
             String.format(
                 Locale.ROOT,
@@ -34,6 +35,7 @@ fun Exception.createLogMessage(): String {
                 stackTraceToString()
             )
         }
+
         is SQLException -> {
             String.format(
                 Locale.ROOT,

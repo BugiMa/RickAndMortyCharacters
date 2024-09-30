@@ -3,8 +3,7 @@ package com.bugima.rickandmortycharacters.ui.mapper
 import com.bugima.rickandmortycharacters.domain.model.Character
 import com.bugima.rickandmortycharacters.ui.CharacterViewState
 
-class MainScreenViewMapperImpl: MainScreenViewMapper {
-
+class MainScreenViewMapperImpl : MainScreenViewMapper {
     override fun mapToCharacterViewStateList(
         allCharacters: Set<Character>,
         favoriteCharactersIds: List<Int>

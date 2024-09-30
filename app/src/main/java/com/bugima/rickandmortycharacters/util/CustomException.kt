@@ -1,6 +1,5 @@
 package com.bugima.rickandmortycharacters.util
 
-import androidx.compose.ui.text.intl.Locale
 import com.bugima.rickandmortycharacters.R
 
 sealed class CustomException(

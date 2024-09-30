@@ -3,7 +3,6 @@ package com.bugima.rickandmortycharacters.ui
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.util.copy
 import com.bugima.rickandmortycharacters.domain.model.Character
 import com.bugima.rickandmortycharacters.domain.usecase.AddCharacterToFavoritesUseCase
 import com.bugima.rickandmortycharacters.domain.usecase.FetchCharactersUseCase
@@ -19,7 +18,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -28,7 +26,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+class MainViewModel
+@Inject constructor(
     private val fetchCharactersUseCase: FetchCharactersUseCase,
     private val getCharacterPageCountUseCase: GetCharacterPageCountUseCase,
     private val addCharacterToFavoritesUseCase: AddCharacterToFavoritesUseCase,

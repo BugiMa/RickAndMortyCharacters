@@ -6,6 +6,6 @@ import com.bugima.rickandmortycharacters.data.local.dao.FavoriteCharacterDao
 import com.bugima.rickandmortycharacters.data.local.entity.CharacterEntity
 
 @Database(entities = [CharacterEntity::class], version = 1)
-abstract class RickAndMortyDatabase: RoomDatabase() {
+abstract class RickAndMortyDatabase : RoomDatabase() {
     abstract fun favoriteCharacterDao(): FavoriteCharacterDao
 }

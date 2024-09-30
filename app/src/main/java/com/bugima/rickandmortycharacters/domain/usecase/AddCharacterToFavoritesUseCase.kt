@@ -4,7 +4,8 @@ import com.bugima.rickandmortycharacters.domain.model.Character
 import com.bugima.rickandmortycharacters.domain.repository.CharacterRepository
 import javax.inject.Inject
 
-class AddCharacterToFavoritesUseCase @Inject constructor(
+class AddCharacterToFavoritesUseCase
+@Inject constructor(
     private val characterRepository: CharacterRepository
 ) {
     suspend operator fun invoke(character: Character) {

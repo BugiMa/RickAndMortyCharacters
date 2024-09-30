@@ -13,8 +13,7 @@ class CharacterRepositoryImpl
 @Inject constructor(
     private val apiService: RickAndMortyApi,
     private val favoriteCharacterDao: FavoriteCharacterDao,
-): CharacterRepository {
-
+) : CharacterRepository {
     private var cachedPageCount: Int? = null
 
     override suspend fun fetchCharacters(page: Int): Set<Character> =
